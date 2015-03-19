@@ -20,9 +20,9 @@ public class StatusTwitter {
     public static void main(String[] args) throws TwitterException {
      
         Twitter mitwitter = new TwitterFactory().getInstance();
- 
-        Query query = new Query("#Cangas");
-        QueryResult result = mitwitter.search(query);
+        
+        QueryResult result = mitwitter.search(new Query("#Cangas"));
+        
         for (Status status : result.getTweets()) {
             System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
